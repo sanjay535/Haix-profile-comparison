@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from "react";
 
-const Controllers = () => {
+
+const Controllers = ({handleFetchInsightClick}) => {
     const [days, setDays]=useState(10);
   return (
     <div>
@@ -16,7 +17,7 @@ const Controllers = () => {
           onChange={e=>setDays(e.target.value)}
         />
       </div>
-      <button className='bg-[#8dc7ed] py-2 px-4 my-3'>Fetch Insight</button>
+      <button onClick={()=>handleFetchInsightClick(days)} className='bg-[#8dc7ed] py-2 px-4 my-3'>Fetch Insight</button>
     </div>
   );
 };
